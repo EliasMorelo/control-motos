@@ -1,0 +1,50 @@
+<html lang="en" dir="ltr">
+ <%- include("partials/header")%>
+  <body>
+  <%- include("partials/nav")%>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-xl-8 mx-auto">
+        <div class="card">
+          <div class="card-header bg-success text-white text-center">
+            <h2>Datos del Conductor.</h2>
+          </div>
+          <div class="card-body">
+            <h3 class="text-center text-success font-weight-bold">Foto del conductor.</h3>
+              <div class="col-xl-12 mx-auto my-4">
+                <img width="100%" height="auto" src="<%= dueño.foto %>" id="photo" alt="photo">
+              </div>
+              <div class="row my-4">
+              </div>
+              <h3 class="text-center text-success font-weight-bold my-4">Datos del conductor.</h3>
+              <div class="col-xl-10 mx-auto text-left">
+                <div class="form-group">
+                  <p class=""><b>Nombres:</b> <%= dueño.nombres %></p>
+                </div>
+                <div class="form-group text-left">
+                  <p class=""><b>Apellidos:</b> <%= dueño.apellidos %></p>
+                </div>
+                <div class="form-group text-left">
+                <p class=""><b>Identificacion:</b> <%= dueño.id %></p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 mx-auto my-2">
+        <div class="card">
+          <div class="card-header bg-success">
+            <h2 class="text-center text-white">Vehiculos del conductor.</h2>
+          </div>
+          <div class="card-body">
+            <p class="text-center text-success">Número de vehiculos registrados: <%= vehiculo %></p>
+            <form action="/mostrar-vehiculos" method="post">
+              <input type="text" name="id" value="<%= dueño.id %>" style="display: none;">
+              <input class="btn btn-success btn-block" type="submit" name="ver" value="Ver Vehiculos">
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

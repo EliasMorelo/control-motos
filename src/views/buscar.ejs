@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<%-include("partials/header")%>
+  <body>
+   <%-include("partials/nav")%>
+   <%- include("partials/message") %>
+   <div class="container p-4">
+     <div class="row">
+       <div class="col-xl-6 mx-auto text-center">
+         <div class="card">
+           <div class="card-header bg-success text-white">
+             <h2 class="text-succes">Buscar Vehiculo</h2>
+           </div>
+           <div class="card-tittle">
+             <p class="h3 text-success font-weight-bold my-2">Ingrese la identificacion del conductor</p>
+           </div>
+           <div class="card-body">
+             <form class="formulario" action="/buscar-vehiculo" method="post">
+               <div class="form-group">
+                 <input class="form-control my-2"type="text" name="iden" value="" placeholder="Indenticiacion del conductor" autofocus>
+               </div>
+               <div class="form-group">
+                 <input class="btn btn-success btn-block" type="submit" name="submit" value="Buscar Vehiculo">
+               </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+  </body>
+</html>

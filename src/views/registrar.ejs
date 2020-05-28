@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <%-include("partials/header") %>
+<body>
+  <%-include("partials/nav") %>
+  <%-include("partials/message") %>
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-xl-6 mx-auto">
+        <div class="card">
+          <div class="card-header bg-success text-white text-center">
+            <h2>Registrar un vehiculo</h2>
+          </div>
+          <div class="card-body">
+            <h3 class="text-center text-success font-weight-bold my-4">Foto de la placa</h3>
+            <div class="col-xl-12 mx-auto text-center">
+              <label class="text-success" for="listaDeDispositivos">Camara: </label>
+            </div>
+            <form class="formulario" action="/registrar-vehiculo" method="post" enctype="multipart/form-data">
+              <div class="col-xl-12 mx-auto my-4">
+                <video width="100%" id="video"><canvas id="canvas"><img src="" id="photo" alt="photo"></canvas></video>
+                <input type="text" name="fotovehiculo" style="display:none;"id="texto" alt="photo">
+                <button id="flip-button" style="display: none;">Cambiar Camara</button>
+              </div>
+              <div class="row my-4">
+                <div class="col-xl-6 text-center mx-auto">
+                  <button class="btn btn-success btn-block" id="startbutton">Tomar foto</button>
+                  <button class="btn btn-success btn-block" id="restetbutton">Tomar foto nuevamente</button>
+                </div>
+              </div>
+              <h3 class="text-center text-success font-weight-bold my-4">Datos del conductor</h3>
+              <div class="col-xl-10 mx-auto text-center">
+                <div class="form-group">
+                  <input class="form-control" type="text" name="nombres" value="" placeholder="Nombres del conductor">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="text" name="apellidos" value="" placeholder="Apellidos del conductor">
+                </div>
+                <div class="form-group">
+                  <input class="form-control" type="text" name="id" value="" placeholder="Identificacion">
+                </div>
+             </div>
+             <h3 class="text-center text-success font-weight-bold my-4">Foto del conductor</h3>
+                <div class="col-xl-12 mx-auto text-center">
+                  <label class="text-success" for="listaDeDispositivos">Camara: </label>
+                </div>
+                <p id="estado-dos"></p>
+                <div class="col-xl-12 mx-auto my-4">
+                  <video width="100%" id="video-dos"><canvas id="canvas-dos"><img src="" id="photo-dos" alt="photo"></canvas></video>
+                  <input type="text" name="fotoconductor" style="display:none;"id="texto-dos" alt="photo">
+                </div>
+                <div class="row my-4">
+                  <div class="col-xl-6 text-center mx-auto">
+                    <button class="btn btn-success btn-block" id="startbutton-dos">Tomar foto</button>
+                    <button class="btn btn-success btn-block" id="restetbutton-dos">Tomar foto nuevamente</button>
+                  </div>
+                </div>
+                <div class="col-xl-12 mx-auto text-center">
+                  <div class="form-group">
+                    <input class="btn btn-success btn-block" type="submit" name="guardar" value="Registrar vehiculo">
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script type="text/javascript" src="lib/camara.js"></script>
+<script type="text/javascript" src="lib/camara2.js"></script>

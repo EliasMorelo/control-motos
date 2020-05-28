@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("partials/header")%>
+<body>
+    <%- include("partials/nav")%>
+    <div class="container p-4">
+        <div class="row">
+            <div class="col-md-12 mx-auto text-center">
+                <% if (longitud <= 0) {%>
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="h3 text-center">Hoy no han salido vehiculos</p>
+                        </div>
+                    </div>
+                    <% }else { %>
+                <div class="card-columns">
+                    <% result.forEach(function(salida){ %>
+                    <div class="card">
+                        <div class="card-header bg-success text-white text-center">
+                            <h2>Datos del vehiculo.</h2>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="text-center text-success font-weight-bold">
+                                Foto de la placa.
+                            </h3>
+                            <div class="col-xl-12 mx-auto my-4">
+                                <img width="100%" height="auto" src="<%= salida.foto %>" alt="Foto de la placa" />
+                            </div>
+                            <div class="col-xl-12 mx-auto my-2">
+                                <p class="h4">Fecha: <%= salida.fecha%></p>
+                            </div>
+                        </div>
+                        <% }); %>
+                        <%}%>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
